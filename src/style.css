@@ -195,3 +195,23 @@ h1 span {
     width: 600px; /* GIF 크기를 300px로 조정 (기존 150px에서 확대) */
     height: auto; /* 비율을 유지하며 높이 자동 조정 */
 }
+
+#result-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* 화면 전체 높이만큼 채우기 */
+}
+
+#lotto-results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.game-row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px; /* 게임 줄 간격 추가 */
+}
