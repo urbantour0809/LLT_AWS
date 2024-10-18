@@ -9,7 +9,7 @@ window.onload = function() {
 
     document.getElementById('game-info').innerText = `1137회차 (${formattedDate})`;
 
-    fetch(`${flaskUrl}/generate-lotto`)
+    fetch(`${flaskUrl}/generate-lotto/`)
         .then(response => response.json())
         .then(data => {
             const gameNumbers = data.numbers;
