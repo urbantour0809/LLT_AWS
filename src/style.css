@@ -196,12 +196,14 @@ h1 span {
     height: auto; /* 비율을 유지하며 높이 자동 조정 */
 }
 
+/* 결과 컨테이너를 화면 중앙에 위치시키기 */
 #result-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 100vh; /* 화면 전체 높이만큼 채우기 */
+    text-align: center; /* 텍스트를 가운데 정렬 */
 }
 
 #lotto-results {
