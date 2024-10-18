@@ -1,5 +1,7 @@
 window.onload = function() {
-    const flaskUrl = 'https://port-0-llt-backend-m2eej1jqd8b44d66.sel4.cloudtype.app'; // Flask 서버의 AWS URL로 변경
+    const flaskUrl = 'https://port-0-llt-backend-m2eej1jqd8b44d66.sel4.cloudtype.app'; // Flask 서버의 URL
+
+    console.log("Initializing script...");
 
     const date = new Date();
     const day = date.getDay();
@@ -9,9 +11,18 @@ window.onload = function() {
 
     document.getElementById('game-info').innerText = `1137회차 (${formattedDate})`;
 
-    fetch(`${flaskUrl}/generate-lotto/`)
-        .then(response => response.json())
+    console.log("Fetching lotto numbers from backend...");
+
+    fetch(`${flaskUrl}/generate-lotto`)
+        .then(response => {
+            console.log("Received response from backend");
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        })
         .then(data => {
+            console.log("Lotto numbers:", data.numbers);
             const gameNumbers = data.numbers;
             appendNumbers('game1', gameNumbers[0]);
             appendNumbers('game2', gameNumbers[1]);
@@ -19,9 +30,12 @@ window.onload = function() {
             appendNumbers('game4', gameNumbers[3]);
             appendNumbers('game5', gameNumbers[4]);
         })
-        .catch(error => console.error('Error:', error));
+        .catch(error => {
+            console.error('Error fetching lotto numbers:', error);
+        });
 
     function appendNumbers(gameId, numbers) {
+        console.log(`Appending numbers for ${gameId}:`, numbers);
         const gameDiv = document.getElementById(gameId);
         gameDiv.innerHTML = '';
         numbers.forEach(num => {
