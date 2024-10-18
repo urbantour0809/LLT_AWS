@@ -21,22 +21,36 @@
         
         <div class="icons">
             <a href="#"><img src="src/image/jobko.jpeg" alt="JOBKO 아이콘"></a>
-            <a href="#"><img src="src/image/linkedin.png" alt="LinkedIn 아이콘"></a>
-            <a href="#"><img src="src/image/git.png" alt="Github 아이콘"></a>
+            <a href="https://www.linkedin.com/in/%EC%9B%90%EB%B9%88-%EB%B0%95-286a6930a/"><img src="src/image/linkedin.png" alt="LinkedIn 아이콘"></a>
+            <a href="https://github.com/urbantour0809"><img src="src/image/git.png" alt="Github 아이콘"></a>
         </div>
     </nav>
 
     <!-- 메인 콘텐츠 -->
-    <section class="main-content" id="main-content">
+    <section id="main-content" class="main-content">
         <h1>로또 번호 생성기</h1>
         <p>카스트로폴룩스(CASTORPOLLUX) - 행운을 부르는 주문<br>행복해지기를 바라는 누구에게나 혹은 상대방에게 전하는 짧은 주문</p>
-        <button class="lotto-btn" onclick="generateLotto()">이번주 번호 뽑기</button>
+        <button class="lotto-btn" onclick="generateLotto()">이번주 번호 뽑기</button> <!-- 클릭 시 generateLotto 함수 호출 -->
     </section>
 
+    <!-- 결과 출력 영역 -->
+    <section id="result-container" style="display:none;">
+        <h2>이번주 번호</h2>
+        <p id="game-info"></p>
+        <div id="lotto-results">
+            <div class="game-row" id="game1"></div>
+            <div class="game-row" id="game2"></div>
+            <div class="game-row" id="game3"></div>
+            <div class="game-row" id="game4"></div>
+            <div class="game-row" id="game5"></div>
+        </div>
+    </section>
+
+    <!-- 로딩 화면 -->
     <div id="loading" class="loading-overlay" style="display: none;">
         <img src="src/image/loading.gif" alt="Loading" class="loading-gif">
     </div>
 
-    <script src="src/script.js"></script>
+    <script src="script.js"></script> <!-- script.js 파일을 제대로 로드 -->
 </body>
 </html>
