@@ -12,6 +12,7 @@ document.getElementById('game-info').innerText = `1137회차 (${formattedDate})`
 
 function generateLotto() {
     document.getElementById('loading').style.display = 'flex'; // 로딩 중 표시
+    document.getElementById('main-content').style.display = 'none'; // 메인 콘텐츠 숨김
     console.log("Fetching lotto numbers from backend...");
 
     fetch(`${flaskUrl}/generate-lotto`)
