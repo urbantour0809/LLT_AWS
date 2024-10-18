@@ -196,14 +196,14 @@ h1 span {
     height: auto; /* 비율을 유지하며 높이 자동 조정 */
 }
 
-/* 결과 컨테이너를 화면 중앙에 위치시키기 */
 #result-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh; /* 화면 전체 높이만큼 채우기 */
-    text-align: center; /* 텍스트를 가운데 정렬 */
+    min-height: 70vh; /* 화면 높이 중 70% 채우기 */
+    margin-top: 80px; /* 네비게이션 바 아래로 떨어지게 여백 추가 */
+    text-align: center;
 }
 
 #lotto-results {
@@ -215,5 +215,5 @@ h1 span {
 .game-row {
     display: flex;
     justify-content: center;
-    margin-bottom: 10px; /* 게임 줄 간격 추가 */
+    margin-bottom: 10px;
 }
