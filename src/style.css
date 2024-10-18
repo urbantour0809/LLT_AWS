@@ -202,7 +202,7 @@ h1 span {
     align-items: center;
     justify-content: center;
     min-height: 70vh; /* 화면 높이 중 70% 채우기 */
-    margin-top: 80px; /* 네비게이션 바 아래로 떨어지게 여백 추가 */
+    margin-top: 120px; /* 네비게이션 바 아래로 떨어지게 여백 추가 */
     text-align: center;
 }
 
