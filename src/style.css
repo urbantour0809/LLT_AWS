@@ -218,57 +218,136 @@ h1 span {
     margin-bottom: 10px;
 }
 
-/* 공통 모바일 설정 */
-@media only screen and (max-width: 768px) {
+/* 스마트폰 (가로/세로): 기본적인 스마트폰을 위한 스타일 */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    /* 네비게이션 바 */
     .navbar {
-        padding: 10px 20px;
+        padding: 10px 15px;
     }
+
+    /* 로고 크기 축소 */
     .logo img {
-        height: 50px; /* 모바일에 맞게 로고 크기 축소 */
+        height: 40px;
     }
+
+    /* 메뉴 링크 크기 축소 */
+    .nav-links li a {
+        font-size: 0.9em;
+    }
+
+    /* 버튼 크기 조정 */
+    .lotto-btn {
+        font-size: 1.1em;
+        padding: 8px 16px;
+    }
+
+    /* 로또 번호 공 크기 축소 */
+    .lotto-ball {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* 로또 결과 영역 가운데 정렬 */
+    #result-container {
+        margin-top: 80px;
+    }
+
+    /* 게임 정보 글씨 크기 축소 */
+    #game-info {
+        font-size: 1em;
+    }
+}
+
+/* 갤럭시 S23 울트라 (3088x1440): 세로 */
+@media only screen and (max-width: 1440px) {
+    /* 네비게이션 바 패딩 조정 */
+    .navbar {
+        padding: 15px 25px;
+    }
+
+    /* 로고 크기 조정 */
+    .logo img {
+        height: 60px;
+    }
+
+    /* 로또 번호 공 크기 축소 */
+    .lotto-ball {
+        width: 60px;
+        height: 60px;
+    }
+
+    /* 버튼 크기 조정 */
+    .lotto-btn {
+        font-size: 1.3em;
+        padding: 10px 30px;
+    }
+
+    /* 결과 영역 여백 축소 */
+    #result-container {
+        margin-top: 100px;
+    }
+
+    /* 게임 정보 글씨 크기 조정 */
+    #game-info {
+        font-size: 1.2em;
+    }
+}
+
+/* 갤럭시 S23 울트라 (3088x1440): 가로 */
+@media only screen and (min-width: 1440px) {
+    /* 네비게이션 바 */
+    .navbar {
+        padding: 10px 25px;
+    }
+
+    /* 로고 크기 조정 */
+    .logo img {
+        height: 70px;
+    }
+
+    /* 메뉴 링크 크기 */
     .nav-links li a {
         font-size: 1em;
     }
-    .main-content h1 {
-        font-size: 2em;
+
+    /* 로또 번호 공 크기 축소 */
+    .lotto-ball {
+        width: 70px;
+        height: 70px;
     }
-    .lotto-btn {
-        font-size: 1.2em;
-        padding: 10px 20px;
+
+    /* 결과 영역 여백 조정 */
+    #result-container {
+        margin-top: 120px;
     }
+
+    /* 게임 정보 글씨 크기 */
+    #game-info {
+        font-size: 1.3em;
+    }
+}
+
+/* iPhone4와 같은 높은 해상도 기기 대응 */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+    /* 로고 크기 */
+    .logo img {
+        height: 50px;
+    }
+
+    /* 로또 번호 공 크기 */
     .lotto-ball {
         width: 50px;
         height: 50px;
     }
+
+    /* 버튼 크기 조정 */
+    .lotto-btn {
+        font-size: 1.2em;
+        padding: 10px 20px;
+    }
+
+    /* 결과 영역 여백 축소 */
     #result-container {
-        margin-top: 80px; /* 모바일에서는 조금 더 여백을 줄임 */
-    }
-}
-
-/* Galaxy S23, S24 해상도 (2340x1080, 2400x1080) */
-@media only screen and (max-width: 1080px) {
-    .navbar {
-        padding: 15px 30px;
-    }
-    .logo img {
-        height: 70px;
-    }
-    .lotto-ball {
-        width: 70px;
-        height: 70px;
-    }
-}
-
-/* iPhone 14, 15, 16 해상도 (2532x1170, 2778x1284) */
-@media only screen and (max-width: 1170px) {
-    .navbar {
-        padding: 15px 30px;
-    }
-    .logo img {
-        height: 70px;
-    }
-    .lotto-ball {
-        width: 70px;
-        height: 70px;
+        margin-top: 90px;
     }
 }
