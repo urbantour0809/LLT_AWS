@@ -1,5 +1,5 @@
 window.onload = function() {
-    const flaskUrl = 'https://port-0-flask-m2eej1jqd8b44d66.sel4.cloudtype.app/'; // Flask 서버의 AWS URL로 변경
+    const flaskUrl = 'https://port-0-llt-backend-m2eej1jqd8b44d66.sel4.cloudtype.app'; // Flask 서버의 AWS URL로 변경
 
     const date = new Date();
     const day = date.getDay();
