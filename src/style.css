@@ -217,3 +217,58 @@ h1 span {
     justify-content: center;
     margin-bottom: 10px;
 }
+
+/* 공통 모바일 설정 */
+@media only screen and (max-width: 768px) {
+    .navbar {
+        padding: 10px 20px;
+    }
+    .logo img {
+        height: 50px; /* 모바일에 맞게 로고 크기 축소 */
+    }
+    .nav-links li a {
+        font-size: 1em;
+    }
+    .main-content h1 {
+        font-size: 2em;
+    }
+    .lotto-btn {
+        font-size: 1.2em;
+        padding: 10px 20px;
+    }
+    .lotto-ball {
+        width: 50px;
+        height: 50px;
+    }
+    #result-container {
+        margin-top: 80px; /* 모바일에서는 조금 더 여백을 줄임 */
+    }
+}
+
+/* Galaxy S23, S24 해상도 (2340x1080, 2400x1080) */
+@media only screen and (max-width: 1080px) {
+    .navbar {
+        padding: 15px 30px;
+    }
+    .logo img {
+        height: 70px;
+    }
+    .lotto-ball {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+/* iPhone 14, 15, 16 해상도 (2532x1170, 2778x1284) */
+@media only screen and (max-width: 1170px) {
+    .navbar {
+        padding: 15px 30px;
+    }
+    .logo img {
+        height: 70px;
+    }
+    .lotto-ball {
+        width: 70px;
+        height: 70px;
+    }
+}
