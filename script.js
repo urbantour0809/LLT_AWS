@@ -8,8 +8,6 @@ const diff = 6 - day;
 const nextSaturday = new Date(date.setDate(date.getDate() + diff));
 const formattedDate = nextSaturday.toISOString().split('T')[0];
 
-document.getElementById('game-info').innerText = `1137회차 (${formattedDate})`;
-
 function generateLotto() {
     document.getElementById('loading').style.display = 'flex'; // 로딩 중 표시
     document.getElementById('main-content').style.display = 'none'; // 메인 콘텐츠 숨김
@@ -26,6 +24,11 @@ function generateLotto() {
         .then(data => {
             console.log("Lotto numbers:", data.numbers);
             const gameNumbers = data.numbers;
+            const currentRound = data.round; // 백엔드에서 받아온 회차 번호
+
+            // 회차 정보 업데이트
+            document.getElementById('game-info').innerText = `${currentRound}회차 (${formattedDate})`;
+
             appendNumbers('game1', gameNumbers[0]);
             appendNumbers('game2', gameNumbers[1]);
             appendNumbers('game3', gameNumbers[2]);
