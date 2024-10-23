@@ -24,7 +24,6 @@ h1 {
         font-weight: 400;
         font-style: normal;
       }
-      
 }
 
 h1 span {
@@ -38,20 +37,20 @@ h1 span {
     justify-content: space-between;
     align-items: center;
     padding: 20px 50px;
-    background-color: rgba(0, 0, 0, 0.3); /* 배경 투명도 */
+    background-color: rgba(0, 0, 0, 0.3);
     position: fixed;
     width: 100%;
     top: 0;
-    height: 90px; /* 네비게이션 바 높이를 고정 */
+    height: 90px;
 }
 
 .logo {
-    height: 80px; /* 로고 영역의 높이를 고정 */
+    height: 80px;
 }
 
 .logo img {
-    height: 100px; /* 로고 자체 크기를 키움 */
-    margin-top: -10px; /* 로고가 네비게이션 바 안에서 중앙에 위치하도록 조정 */
+    height: 100px;
+    margin-top: -10px;
 }
 
 .nav-links {
@@ -174,6 +173,7 @@ h1 span {
 @media only screen and (max-width: 480px) {
     .navbar {
         padding: 10px 15px;
+        height: 60px;
     }
 
     .logo img {
@@ -181,12 +181,12 @@ h1 span {
     }
 
     .nav-links li a {
-        font-size: 0.9em;
+        font-size: 0.8em;
     }
 
     .lotto-btn {
-        font-size: 1.1em;
-        padding: 8px 16px;
+        font-size: 1em;
+        padding: 10px 25px;
     }
 
     .lotto-ball {
@@ -195,10 +195,19 @@ h1 span {
     }
 
     #result-container {
-        margin-top: 80px;
+        margin-top: 70px;
     }
 
     #game-info {
+        font-size: 0.9em;
+    }
+
+    /* 메인 콘텐츠 글씨 크기 줄임 */
+    .main-content h1 {
+        font-size: 2em;
+    }
+
+    .main-content p {
         font-size: 1em;
     }
 }
@@ -207,6 +216,7 @@ h1 span {
 @media only screen and (max-width: 1440px) {
     .navbar {
         padding: 15px 25px;
+        height: 70px;
     }
 
     .logo img {
@@ -229,6 +239,35 @@ h1 span {
 
     #game-info {
         font-size: 1.2em;
+    }
+}
+
+/* 갤럭시 S23 울트라 (3088x1440): 가로 */
+@media only screen and (min-width: 1440px) {
+    .navbar {
+        padding: 10px 25px;
+        height: 70px;
+    }
+
+    .logo img {
+        height: 70px;
+    }
+
+    .nav-links li a {
+        font-size: 1em;
+    }
+
+    .lotto-ball {
+        width: 70px;
+        height: 70px;
+    }
+
+    #result-container {
+        margin-top: 120px;
+    }
+
+    #game-info {
+        font-size: 1.3em;
     }
 }
 
