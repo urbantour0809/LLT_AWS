@@ -50,7 +50,7 @@ h1 span {
 }
 
 .logo img {
-    height: 100px; /* 로고 자체 크기를 키움 (네비게이션 바에 영향을 주지 않음) */
+    height: 100px; /* 로고 자체 크기를 키움 */
     margin-top: -10px; /* 로고가 네비게이션 바 안에서 중앙에 위치하도록 조정 */
 }
 
@@ -67,13 +67,13 @@ h1 span {
     text-decoration: none;
     color: white;
     font-size: 1.2em;
-    transition: transform 0.3s ease, text-shadow 0.3s ease; /* 부드러운 전환 효과 */
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
 }
 
 /* 네비게이션 링크 호버 효과 */
 .nav-links li a:hover {
-    transform: scale(1.2); /* 1.2배 확대 */
-    text-shadow: 0 4px 10px rgba(255, 255, 255, 0.6); /* 텍스트에 쉐이드 효과 */
+    transform: scale(1.2);
+    text-shadow: 0 4px 10px rgba(255, 255, 255, 0.6);
 }
 
 .icons {
@@ -83,49 +83,27 @@ h1 span {
 }
 
 .icons a {
-    margin-left: 15px; /* 아이콘 사이 간격 조정 */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* 호버 시 부드러운 효과 */
+    margin-left: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .icons a img {
-    height: 40px; /* 각 아이콘 크기 조정 */
+    height: 40px;
     width: auto;
-    border-radius: 50%; /* 원형을 유지 */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* 아이콘 호버 시 부드러운 효과 */
+    border-radius: 50%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* 아이콘 호버 시 효과 */
 .icons a:hover img {
-    transform: scale(1.2); /* 1.2배 확대 */
-    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.6); /* 하얀색 쉐이드 효과 */
-    border-radius: 50%; /* 호버 시에도 원형 유지 */
+    transform: scale(1.2);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
 }
 
-.main-content-index {
+.main-content {
     text-align: center;
-    margin-top: 30vh; /* 화면 높이의 30% 정도로 설정하여 중앙에 가까이 배치 */
-}
-
-.main-content-index h1 {
-    font-size: 3em;
-    margin-bottom: 20px;
-}
-
-.main-content-index p {
-    font-size: 1.2em;
-    line-height: 1.5;
-    margin-bottom: 40px;
-}
-
-.main-content h1 {
-    font-size: 3em;
-    margin-bottom: 20px;
-}
-
-.main-content p {
-    font-size: 1.2em;
-    line-height: 1.5;
-    margin-bottom: 40px;
+    margin-top: 100px;
 }
 
 .lotto-btn {
@@ -136,19 +114,13 @@ h1 span {
     color: white;
     border-radius: 30px;
     cursor: pointer;
-    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* 부드러운 전환 효과 */
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* 뽑기 버튼 호버 시 효과 */
 .lotto-btn:hover {
     background: linear-gradient(to right, #cb89e7, #83bce2);
-    transform: scale(1.2); /* 1.2배 확대 */
-    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.6); /* 하얀색 쉐이드 효과 */
-}
-
-.main-content {
-    text-align: center;
-    margin-top: 100px;
+    transform: scale(1.2);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.6);
 }
 
 #game-info {
@@ -160,15 +132,6 @@ h1 span {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.game-row {
-    margin: 10px 0;
-}
-
-.game-numbers {
-    display: flex;
-    justify-content: center;
 }
 
 .lotto-ball {
@@ -183,17 +146,17 @@ h1 span {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* 반투명 배경 */
+    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 9999; /* 다른 요소보다 위에 표시 */
-    display: none; /* 기본적으로 숨김 */
+    z-index: 9999;
+    display: none;
 }
 
 .loading-gif {
-    width: 600px; /* GIF 크기를 300px로 조정 (기존 150px에서 확대) */
-    height: auto; /* 비율을 유지하며 높이 자동 조정 */
+    width: 600px;
+    height: auto;
 }
 
 #result-container {
@@ -201,58 +164,40 @@ h1 span {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 70vh; /* 화면 높이 중 70% 채우기 */
-    margin-top: 120px; /* 네비게이션 바 아래로 떨어지게 여백 추가 */
+    min-height: 70vh;
+    margin-top: 120px;
     text-align: center;
 }
 
-#lotto-results {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.game-row {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 10px;
-}
-
-/* 스마트폰 (가로/세로): 기본적인 스마트폰을 위한 스타일 */
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-    /* 네비게이션 바 */
+/* 모바일 장치에서만 적용되는 미디어 쿼리 */
+/* 스마트폰 (세로/가로) */
+@media only screen and (max-width: 480px) {
     .navbar {
         padding: 10px 15px;
     }
 
-    /* 로고 크기 축소 */
     .logo img {
         height: 40px;
     }
 
-    /* 메뉴 링크 크기 축소 */
     .nav-links li a {
         font-size: 0.9em;
     }
 
-    /* 버튼 크기 조정 */
     .lotto-btn {
         font-size: 1.1em;
         padding: 8px 16px;
     }
 
-    /* 로또 번호 공 크기 축소 */
     .lotto-ball {
         width: 40px;
         height: 40px;
     }
 
-    /* 로또 결과 영역 가운데 정렬 */
     #result-container {
         margin-top: 80px;
     }
 
-    /* 게임 정보 글씨 크기 축소 */
     #game-info {
         font-size: 1em;
     }
@@ -260,93 +205,49 @@ h1 span {
 
 /* 갤럭시 S23 울트라 (3088x1440): 세로 */
 @media only screen and (max-width: 1440px) {
-    /* 네비게이션 바 패딩 조정 */
     .navbar {
         padding: 15px 25px;
     }
 
-    /* 로고 크기 조정 */
     .logo img {
         height: 60px;
     }
 
-    /* 로또 번호 공 크기 축소 */
     .lotto-ball {
         width: 60px;
         height: 60px;
     }
 
-    /* 버튼 크기 조정 */
     .lotto-btn {
         font-size: 1.3em;
         padding: 10px 30px;
     }
 
-    /* 결과 영역 여백 축소 */
     #result-container {
         margin-top: 100px;
     }
 
-    /* 게임 정보 글씨 크기 조정 */
     #game-info {
         font-size: 1.2em;
     }
 }
 
-/* 갤럭시 S23 울트라 (3088x1440): 가로 */
-@media only screen and (min-width: 1440px) {
-    /* 네비게이션 바 */
-    .navbar {
-        padding: 10px 25px;
-    }
-
-    /* 로고 크기 조정 */
-    .logo img {
-        height: 70px;
-    }
-
-    /* 메뉴 링크 크기 */
-    .nav-links li a {
-        font-size: 1em;
-    }
-
-    /* 로또 번호 공 크기 축소 */
-    .lotto-ball {
-        width: 70px;
-        height: 70px;
-    }
-
-    /* 결과 영역 여백 조정 */
-    #result-container {
-        margin-top: 120px;
-    }
-
-    /* 게임 정보 글씨 크기 */
-    #game-info {
-        font-size: 1.3em;
-    }
-}
-
-/* iPhone4와 같은 높은 해상도 기기 대응 */
+/* iPhone 및 고해상도 스마트폰 */
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
-    /* 로고 크기 */
     .logo img {
         height: 50px;
     }
 
-    /* 로또 번호 공 크기 */
     .lotto-ball {
         width: 50px;
         height: 50px;
     }
 
-    /* 버튼 크기 조정 */
     .lotto-btn {
         font-size: 1.2em;
         padding: 10px 20px;
     }
 
-    /* 결과 영역 여백 축소 */
     #result-container {
         margin-top: 90px;
     }
