@@ -32,6 +32,7 @@ h1 span {
     border-radius: 8px;
 }
 
+/* 네비게이션 바 수정 */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -41,16 +42,17 @@ h1 span {
     position: fixed;
     width: 100%;
     top: 0;
-    height: 90px;
+    height: 120px; /* 네비게이션 바 높이를 늘림 */
 }
 
+/* 로고 크기 및 위치 수정 */
 .logo {
-    height: 80px;
+    height: 100px; /* 로고 영역 크기 증가 */
 }
 
 .logo img {
-    height: 100px;
-    margin-top: -10px;
+    height: 120px; /* 로고 크기 증가 */
+    margin-top: 10px; /* 로고가 네비게이션 바 안에서 조금 더 아래로 배치되도록 조정 */
 }
 
 .nav-links {
@@ -102,7 +104,7 @@ h1 span {
 
 .main-content {
     text-align: center;
-    margin-top: 100px;
+    margin-top: 150px; /* 메인 콘텐츠와 네비게이션 바 사이 간격 증가 */
 }
 
 .lotto-btn {
@@ -173,11 +175,11 @@ h1 span {
 @media only screen and (max-width: 480px) {
     .navbar {
         padding: 10px 15px;
-        height: 60px;
+        height: 70px; /* 모바일에서는 네비게이션 바 높이를 줄임 */
     }
 
     .logo img {
-        height: 40px;
+        height: 60px; /* 모바일에서는 로고 크기를 줄임 */
     }
 
     .nav-links li a {
@@ -202,7 +204,6 @@ h1 span {
         font-size: 0.9em;
     }
 
-    /* 메인 콘텐츠 글씨 크기 줄임 */
     .main-content h1 {
         font-size: 2em;
     }
@@ -216,11 +217,11 @@ h1 span {
 @media only screen and (max-width: 1440px) {
     .navbar {
         padding: 15px 25px;
-        height: 70px;
+        height: 100px; /* 네비게이션 바 높이 증가 */
     }
 
     .logo img {
-        height: 60px;
+        height: 80px; /* 갤럭시 S23에서는 로고 크기 증가 */
     }
 
     .lotto-ball {
@@ -246,11 +247,11 @@ h1 span {
 @media only screen and (min-width: 1440px) {
     .navbar {
         padding: 10px 25px;
-        height: 70px;
+        height: 120px; /* 가로 모드에서 네비게이션 바 높이 증가 */
     }
 
     .logo img {
-        height: 70px;
+        height: 90px; /* 가로 모드에서 로고 크기 증가 */
     }
 
     .nav-links li a {
@@ -268,26 +269,5 @@ h1 span {
 
     #game-info {
         font-size: 1.3em;
-    }
-}
-
-/* iPhone 및 고해상도 스마트폰 */
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
-    .logo img {
-        height: 50px;
-    }
-
-    .lotto-ball {
-        width: 50px;
-        height: 50px;
-    }
-
-    .lotto-btn {
-        font-size: 1.2em;
-        padding: 10px 20px;
-    }
-
-    #result-container {
-        margin-top: 90px;
     }
 }
