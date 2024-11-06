@@ -127,37 +127,78 @@ body {
     height: auto;
 }
 
-/* Authentication Form Styling */
-.auth-content {
-    max-width: 400px;
-    margin: auto;
-    padding: 20px;
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    margin-top: 100px;
+/* 로그인 및 회원가입 페이지 스타일 조정 */
+.auth-content form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
 }
 
-.auth-content h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
+.auth-content label {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+    color: white;
+}
+
+.auth-content input,
+.auth-content select {
+    width: 100%;
+    padding: 8px;
+    font-size: 1em;
+    border-radius: 5px;
+    border: none;
+    box-sizing: border-box;
+}
+
+.auth-content input[type="text"],
+.auth-content input[type="password"],
+.auth-content input[type="number"] {
+    width: 100%;
+    max-width: 300px;
 }
 
 .auth-btn {
     width: 100%;
     padding: 10px;
-    font-size: 1.2em;
+    font-size: 1.1em;
     color: #fff;
     background: linear-gradient(45deg, #3498db, #8e44ad);
     border: none;
     border-radius: 5px;
     cursor: pointer;
     margin-top: 10px;
+    max-width: 300px;
+    align-self: center;
 }
 
-.auth-btn:hover {
-    background: linear-gradient(45deg, #2980b9, #6d3494);
+.auth-links {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.auth-links p {
+    margin: 5px 0;
+}
+
+.auth-links a {
+    color: #b784ff;
+    text-decoration: none;
+}
+
+.auth-links a:hover {
+    color: #e0c3fc;
+    text-decoration: underline;
+}
+
+.auth-content {
+    max-width: 320px;
+    padding: 20px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 100px;
 }
 
 /* Mobile Styling */
