@@ -11,48 +11,21 @@ body {
     background-size: cover;
 }
 
-p {
-    font-family: 'Noto Sans KR', sans-serif;
-    font-size: 1.2em;
-    line-height: 1.5;
-    margin-bottom: 40px;
-}
-
-h1 {
-    .black-han-sans-regular {
-        font-family: "Black Han Sans", sans-serif;
-        font-weight: 400;
-        font-style: normal;
-      }
-}
-
-h1 span {
-    background-color: #b784ff;
-    padding: 0 8px;
-    border-radius: 8px;
-}
-
-/* 네비게이션 바 수정 */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 50px;
-    background-color: rgba(0, 0, 0, 0.3);
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.6); /* 배경 투명도 */
     position: fixed;
     width: 100%;
     top: 0;
-    height: 120px; /* 네비게이션 바 높이를 늘림 */
-}
-
-/* 로고 크기 및 위치 수정 */
-.logo {
-    height: 100px; /* 로고 영역 크기 증가 */
+    height: 80px;
+    z-index: 10;
 }
 
 .logo img {
-    height: 120px; /* 로고 크기 증가 */
-    margin-top: 10px; /* 로고가 네비게이션 바 안에서 조금 더 아래로 배치되도록 조정 */
+    height: 60px;
 }
 
 .nav-links {
@@ -71,21 +44,9 @@ h1 span {
     transition: transform 0.3s ease, text-shadow 0.3s ease;
 }
 
-/* 네비게이션 링크 호버 효과 */
 .nav-links li a:hover {
     transform: scale(1.2);
     text-shadow: 0 4px 10px rgba(255, 255, 255, 0.6);
-}
-
-.icons {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-.icons a {
-    margin-left: 15px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .icons a img {
@@ -95,7 +56,6 @@ h1 span {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* 아이콘 호버 시 효과 */
 .icons a:hover img {
     transform: scale(1.2);
     box-shadow: 0 4px 15px rgba(255, 255, 255, 0.6);
@@ -104,7 +64,7 @@ h1 span {
 
 .main-content {
     text-align: center;
-    margin-top: 150px; /* 메인 콘텐츠와 네비게이션 바 사이 간격 증가 */
+    margin-top: 150px;
 }
 
 .lotto-btn {
@@ -124,23 +84,6 @@ h1 span {
     box-shadow: 0 4px 15px rgba(255, 255, 255, 0.6);
 }
 
-#game-info {
-    font-size: 1.5em;
-    margin-bottom: 30px;
-}
-
-.lotto-results {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.lotto-ball {
-    width: 90px;
-    height: 90px;
-    margin: 0 1px;
-}
-
 .loading-overlay {
     position: fixed;
     top: 0;
@@ -152,34 +95,59 @@ h1 span {
     justify-content: center;
     align-items: center;
     z-index: 9999;
-    display: none;
 }
 
 .loading-gif {
-    width: 600px;
+    width: 200px;
     height: auto;
 }
 
 #result-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 70vh;
-    margin-top: 120px;
     text-align: center;
+    margin-top: 50px;
+}
+
+.auth-content {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 100px;
+}
+
+.auth-content h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.auth-btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.2em;
+    color: #fff;
+    background: linear-gradient(45deg, #3498db, #8e44ad);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.auth-btn:hover {
+    background: linear-gradient(45deg, #2980b9, #6d3494);
 }
 
 /* 모바일 장치에서만 적용되는 미디어 쿼리 */
-/* 스마트폰 (세로/가로) */
 @media only screen and (max-width: 480px) {
     .navbar {
         padding: 10px 15px;
-        height: 70px; /* 모바일에서는 네비게이션 바 높이를 줄임 */
+        height: 70px;
     }
 
     .logo img {
-        height: 60px; /* 모바일에서는 로고 크기를 줄임 */
+        height: 60px;
     }
 
     .nav-links li a {
@@ -198,76 +166,5 @@ h1 span {
 
     #result-container {
         margin-top: 70px;
-    }
-
-    #game-info {
-        font-size: 0.9em;
-    }
-
-    .main-content h1 {
-        font-size: 2em;
-    }
-
-    .main-content p {
-        font-size: 1em;
-    }
-}
-
-/* 갤럭시 S23 울트라 (3088x1440): 세로 */
-@media only screen and (max-width: 1440px) {
-    .navbar {
-        padding: 15px 25px;
-        height: 100px; /* 네비게이션 바 높이 증가 */
-    }
-
-    .logo img {
-        height: 80px; /* 갤럭시 S23에서는 로고 크기 증가 */
-    }
-
-    .lotto-ball {
-        width: 60px;
-        height: 60px;
-    }
-
-    .lotto-btn {
-        font-size: 1.3em;
-        padding: 10px 30px;
-    }
-
-    #result-container {
-        margin-top: 100px;
-    }
-
-    #game-info {
-        font-size: 1.2em;
-    }
-}
-
-/* 갤럭시 S23 울트라 (3088x1440): 가로 */
-@media only screen and (min-width: 1440px) {
-    .navbar {
-        padding: 10px 25px;
-        height: 120px; /* 가로 모드에서 네비게이션 바 높이 증가 */
-    }
-
-    .logo img {
-        height: 90px; /* 가로 모드에서 로고 크기 증가 */
-    }
-
-    .nav-links li a {
-        font-size: 1em;
-    }
-
-    .lotto-ball {
-        width: 70px;
-        height: 70px;
-    }
-
-    #result-container {
-        margin-top: 120px;
-    }
-
-    #game-info {
-        font-size: 1.3em;
     }
 }

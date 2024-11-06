@@ -11,12 +11,14 @@
     <!-- 네비게이션 바 -->
     <nav class="navbar">
         <div class="logo">
-            <img src="src/image/llt.png" alt="로고">
+            <a href="index.html"><img src="src/image/llt.png" alt="로고"></a>
         </div>
         <ul class="nav-links">
             <li><a href="/">HOME</a></li>
             <li><a href="#">RECORD</a></li>
             <li><a href="#">CONTACT</a></li>
+            <li><a href="login.html">LOGIN</a></li>
+            <li><a href="register.html">REGISTER</a></li>
         </ul>
         
         <div class="icons">
@@ -30,12 +32,12 @@
     <section id="main-content" class="main-content">
         <h1>로또 번호 생성기</h1>
         <p>카스트로폴룩스(CASTORPOLLUX) - 행운을 부르는 주문<br>행복해지기를 바라는 누구에게나 혹은 상대방에게 전하는 짧은 주문</p>
-        <button class="lotto-btn" onclick="generateLotto()">이번주 번호 뽑기</button> <!-- 클릭 시 generateLotto 함수 호출 -->
+        <button class="lotto-btn" onclick="generateLotto()">이번주 번호 뽑기</button>
     </section>
 
     <!-- 결과 출력 영역 -->
     <section id="result-container" style="display:none;">
-        <h2>이번주 번호</h2> <!-- 이 태그도 가운데 정렬됨 -->
+        <h2>이번주 번호</h2>
         <p id="game-info"></p>
         <div id="lotto-results">
             <div class="game-row" id="game1"></div>
@@ -51,6 +53,6 @@
         <img src="src/image/loading.gif" alt="Loading" class="loading-gif">
     </div>
 
-    <script src="script.js"></script> <!-- script.js 파일을 제대로 로드 -->
+    <script src="script.js"></script>
 </body>
 </html>

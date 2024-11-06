@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <link rel="icon" type="image/x-icon" href="src/image/fav.ico">
+    <link rel="stylesheet" href="src/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="src/image/llt.png" alt="로고" href="index.html">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="#">RECORD</a></li>
+            <li><a href="#">CONTACT</a></li>
+        </ul>
+        <div class="icons">
+            <a href="#"><img src="src/image/jobko.jpeg" alt="JOBKO 아이콘"></a>
+            <a href="https://www.linkedin.com/in/%EC%9B%90%EB%B9%88-%EB%B0%95-286a6930a/"><img src="src/image/linkedin.png" alt="LinkedIn 아이콘"></a>
+            <a href="https://github.com/urbantour0809"><img src="src/image/git.png" alt="Github 아이콘"></a>
+        </div>
+    </nav>
+
+    <section class="auth-content">
+        <h2>회원가입</h2>
+        <form id="register-form" onsubmit="return registerUser(event)">
+            <label for="username">아이디</label>
+            <input type="text" id="username" required>
+            <label for="password">비밀번호</label>
+            <input type="password" id="password" required>
+            <label for="confirm_password">비밀번호 확인</label>
+            <input type="password" id="confirm_password" required>
+            <label for="name">이름</label>
+            <input type="text" id="name" required>
+            <label for="age">나이</label>
+            <input type="number" id="age" required>
+            <label for="gender">성별</label>
+            <select id="gender" required>
+                <option value="M">남성</option>
+                <option value="F">여성</option>
+            </select>
+            <button type="submit" class="auth-btn">회원가입</button>
+        </form>
+        <div class="auth-links">
+            <p>이미 계정이 있나요? <a href="login.html">로그인</a></p>
+        </div>
+    </section>
+
+    <script src="auth.js"></script>
+</body>
+</html>

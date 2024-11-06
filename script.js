@@ -1,4 +1,4 @@
-const flaskUrl = 'https://port-0-llt-backend-m2eej1jqd8b44d66.sel4.cloudtype.app'; // Flask 서버의 URL
+const flaskUrl = 'https://port-0-llt-backend-m2eej1jqd8b44d66.sel4.cloudtype.app';
 
 console.log("Initializing script...");
 
@@ -9,8 +9,8 @@ const nextSaturday = new Date(date.setDate(date.getDate() + diff));
 const formattedDate = nextSaturday.toISOString().split('T')[0];
 
 function generateLotto() {
-    document.getElementById('loading').style.display = 'flex'; // 로딩 중 표시
-    document.getElementById('main-content').style.display = 'none'; // 메인 콘텐츠 숨김
+    document.getElementById('loading').style.display = 'flex';
+    document.getElementById('main-content').style.display = 'none';
     console.log("Fetching lotto numbers from backend...");
 
     fetch(`${flaskUrl}/generate-lotto`)
@@ -24,9 +24,8 @@ function generateLotto() {
         .then(data => {
             console.log("Lotto numbers:", data.numbers);
             const gameNumbers = data.numbers;
-            const currentRound = data.round; // 백엔드에서 받아온 회차 번호
+            const currentRound = data.round;
 
-            // 회차 정보 업데이트
             document.getElementById('game-info').innerText = `${currentRound}회차 (${formattedDate})`;
 
             appendNumbers('game1', gameNumbers[0]);
@@ -35,12 +34,12 @@ function generateLotto() {
             appendNumbers('game4', gameNumbers[3]);
             appendNumbers('game5', gameNumbers[4]);
 
-            document.getElementById('loading').style.display = 'none'; // 로딩 숨김
-            document.getElementById('result-container').style.display = 'block'; // 결과 표시
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('result-container').style.display = 'block';
         })
         .catch(error => {
             console.error('Error fetching lotto numbers:', error);
-            document.getElementById('loading').style.display = 'none'; // 로딩 숨김
+            document.getElementById('loading').style.display = 'none';
         });
 }
 
@@ -50,12 +49,11 @@ function appendNumbers(gameId, numbers) {
     gameDiv.innerHTML = '';
     numbers.forEach(num => {
         const img = document.createElement('img');
-        img.src = `src/image/numbers/${num}.png`; // 번호에 해당하는 이미지를 로드
+        img.src = `src/image/numbers/${num}.png`;
         img.alt = `${num}번`;
         img.classList.add('lotto-ball');
         gameDiv.appendChild(img);
     });
 }
 
-// 전역에서 generateLotto 함수 접근 가능하도록 설정
 window.generateLotto = generateLotto;
