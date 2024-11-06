@@ -1,38 +1,34 @@
 const flaskUrl = 'https://port-0-llt-backend-m2eej1jqd8b44d66.sel4.cloudtype.app';
 
-console.log("Initializing script...");
+function checkAuth() {
+    // Check login status from backend
+    return fetch(`${flaskUrl}/check-auth`, { method: 'GET', credentials: 'include' })
+        .then(response => response.json())
+        .then(data => data.loggedIn);
+}
 
-const date = new Date();
-const day = date.getDay();
-const diff = 6 - day;
-const nextSaturday = new Date(date.setDate(date.getDate() + diff));
-const formattedDate = nextSaturday.toISOString().split('T')[0];
+async function generateLotto() {
+    const isLoggedIn = await checkAuth();
+    if (!isLoggedIn) {
+        alert("Please log in to generate lotto numbers.");
+        window.location.href = "login.html";
+        return;
+    }
 
-function generateLotto() {
     document.getElementById('loading').style.display = 'flex';
     document.getElementById('main-content').style.display = 'none';
-    console.log("Fetching lotto numbers from backend...");
 
     fetch(`${flaskUrl}/generate-lotto`)
-        .then(response => {
-            console.log("Received response from backend");
-            if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
-            }
-            return response.json();
-        })
+        .then(response => response.json())
         .then(data => {
-            console.log("Lotto numbers:", data.numbers);
             const gameNumbers = data.numbers;
             const currentRound = data.round;
-
+            const formattedDate = new Date().toISOString().split('T')[0];
             document.getElementById('game-info').innerText = `${currentRound}회차 (${formattedDate})`;
 
-            appendNumbers('game1', gameNumbers[0]);
-            appendNumbers('game2', gameNumbers[1]);
-            appendNumbers('game3', gameNumbers[2]);
-            appendNumbers('game4', gameNumbers[3]);
-            appendNumbers('game5', gameNumbers[4]);
+            for (let i = 0; i < gameNumbers.length; i++) {
+                appendNumbers(`game${i + 1}`, gameNumbers[i]);
+            }
 
             document.getElementById('loading').style.display = 'none';
             document.getElementById('result-container').style.display = 'block';
@@ -44,7 +40,6 @@ function generateLotto() {
 }
 
 function appendNumbers(gameId, numbers) {
-    console.log(`Appending numbers for ${gameId}:`, numbers);
     const gameDiv = document.getElementById(gameId);
     gameDiv.innerHTML = '';
     numbers.forEach(num => {

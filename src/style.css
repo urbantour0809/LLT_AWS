@@ -1,3 +1,4 @@
+/* Reset and General Styling */
 * {
     margin: 0;
     padding: 0;
@@ -11,12 +12,13 @@ body {
     background-size: cover;
 }
 
+/* Navbar Styling */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: rgba(0, 0, 0, 0.6); /* 배경 투명도 */
+    background-color: rgba(0, 0, 0, 0.6);
     position: fixed;
     width: 100%;
     top: 0;
@@ -62,9 +64,20 @@ body {
     border-radius: 50%;
 }
 
+/* Main Content */
 .main-content {
     text-align: center;
     margin-top: 150px;
+}
+
+.main-content h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.main-content p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
 }
 
 .lotto-btn {
@@ -82,6 +95,18 @@ body {
     background: linear-gradient(to right, #cb89e7, #83bce2);
     transform: scale(1.2);
     box-shadow: 0 4px 15px rgba(255, 255, 255, 0.6);
+}
+
+/* Lotto Ball and Result Container */
+#result-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.lotto-ball {
+    width: 70px;
+    height: 70px;
+    margin: 2px;
 }
 
 .loading-overlay {
@@ -102,11 +127,7 @@ body {
     height: auto;
 }
 
-#result-container {
-    text-align: center;
-    margin-top: 50px;
-}
-
+/* Authentication Form Styling */
 .auth-content {
     max-width: 400px;
     margin: auto;
@@ -139,7 +160,7 @@ body {
     background: linear-gradient(45deg, #2980b9, #6d3494);
 }
 
-/* 모바일 장치에서만 적용되는 미디어 쿼리 */
+/* Mobile Styling */
 @media only screen and (max-width: 480px) {
     .navbar {
         padding: 10px 15px;
@@ -147,7 +168,7 @@ body {
     }
 
     .logo img {
-        height: 60px;
+        height: 50px;
     }
 
     .nav-links li a {
@@ -166,5 +187,27 @@ body {
 
     #result-container {
         margin-top: 70px;
+    }
+
+    .main-content h1 {
+        font-size: 1.8em;
+    }
+
+    .main-content p {
+        font-size: 1em;
+    }
+
+    .auth-content {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .auth-content h2 {
+        font-size: 1.6em;
+    }
+
+    .auth-btn {
+        font-size: 1em;
+        padding: 8px;
     }
 }
