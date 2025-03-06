@@ -18,8 +18,11 @@ async function generateLotto() {
 
             const gameNumbers = data.numbers;
             const currentRound = data.round;
-            const formattedDate = new Date().toISOString().split('T')[0];
-            document.getElementById('game-info').innerText = `${currentRound}회차 (${formattedDate})`;
+            
+            // 날짜 형식을 한국어로 변경
+            const today = new Date();
+            const formattedDate = `${today.getFullYear()}년 ${today.getMonth() + 1}월 ${today.getDate()}일`;
+            document.getElementById('game-info').innerText = `제 ${currentRound}회 (${formattedDate})`;
 
             for (let i = 0; i < gameNumbers.length; i++) {
                 console.log(`Appending numbers for game${i + 1}:`, gameNumbers[i]);
