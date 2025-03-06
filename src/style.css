@@ -67,7 +67,7 @@ body {
 /* Main Content */
 .main-content {
     text-align: center;
-    margin-top: 150px;
+    margin-top: 200px;
 }
 
 .main-content h1 {
@@ -100,7 +100,7 @@ body {
 /* Lotto Ball and Result Container */
 #result-container {
     text-align: center;
-    margin-top: 50px;
+    margin-top: 100px;
 }
 
 .lotto-ball {
@@ -251,4 +251,8 @@ body {
         font-size: 1em;
         padding: 8px;
     }
+}
+
+.result-wrapper {
+    margin-top: 150px !important;
 }
