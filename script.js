@@ -35,3 +35,21 @@ async function generateLotto() {
             alert("로또 번호 생성에 실패했습니다. 다시 시도해주세요.");
         });
 }
+
+function appendNumbers(gameId, numbers) {
+    const gameElement = document.getElementById(gameId);
+    if (!gameElement) {
+        console.error(`Element with id ${gameId} not found`);
+        return;
+    }
+    
+    gameElement.innerHTML = ''; // 기존 내용 초기화
+    
+    numbers.forEach(number => {
+        const img = document.createElement('img');
+        img.src = `src/image/numbers/${number}.png`; // 번호에 해당하는 이미지 경로
+        img.alt = `번호 ${number}`;
+        img.className = 'lotto-ball'; // CSS에서 정의된 클래스 사용
+        gameElement.appendChild(img);
+    });
+}
