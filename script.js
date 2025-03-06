@@ -1,40 +1,14 @@
 const flaskUrl = 'https://port-0-llt-backend-m2eej1jqd8b44d66.sel4.cloudtype.app';
 
-// 사용자 인증 확인
-function checkAuth() {
-    console.log("Checking user authentication status...");
-
-    return fetch(`${flaskUrl}/check-auth`, { method: 'GET', credentials: 'include' })
-        .then(response => {
-            console.log("Auth check response:", response);
-            return response.json();
-        })
-        .then(data => {
-            console.log("Auth check data:", data);
-            return data.loggedIn;
-        });
-}
-
-// 로또 번호 생성 함수 (인증 확인 포함)
+// 로또 번호 생성 함수
 async function generateLotto() {
     console.log("Generating lotto numbers...");
-
-    // 로그인 여부 확인
-    const isLoggedIn = await checkAuth();
-    console.log("Is user logged in:", isLoggedIn);
-
-    if (!isLoggedIn) {
-        console.log("User is not logged in, showing alert and redirecting to login page...");
-        alert("로그인 후 이용해주세요.");
-        window.location.href = "login.html";
-        return;
-    }
 
     document.getElementById('loading').style.display = 'flex';
     document.getElementById('main-content').style.display = 'none';
     console.log("Fetching lotto numbers from backend...");
 
-    fetch(`${flaskUrl}/generate-lotto`, { credentials: 'include' })
+    fetch(`${flaskUrl}/generate-lotto`)
         .then(response => {
             console.log("Lotto generation response:", response);
             return response.json();
