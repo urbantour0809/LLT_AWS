@@ -19,8 +19,14 @@ async function generateLotto() {
             const gameNumbers = data.numbers;
             const currentRound = data.round;
             
-            // 백엔드에서 받은 회차 정보 사용
-            document.getElementById('game-info').innerText = `제 ${currentRound}회`;
+            // 회차 정보 표시 수정
+            const roundElement = document.getElementById('game-info');
+            if (roundElement) {
+                roundElement.innerText = `제 ${currentRound}회`;
+                console.log("Updated round number to:", currentRound);
+            } else {
+                console.error("Element with id 'game-info' not found");
+            }
 
             for (let i = 0; i < gameNumbers.length; i++) {
                 console.log(`Appending numbers for game${i + 1}:`, gameNumbers[i]);
